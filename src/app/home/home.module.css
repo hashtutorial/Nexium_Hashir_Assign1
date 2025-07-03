@@ -1,0 +1,206 @@
+:global(:root) 
+{
+    --bg: #e0eafc;
+    --bg-card: rgba(255, 255, 255, 0.2);
+    --text-main: #1a202c;
+    --text-sub: #374151;
+    --button-bg: linear-gradient(to right, #6366f1, #4f46e5);
+    --button-bg-hover: linear-gradient(to right, #4f46e5, #4338ca);
+}
+
+:global([data-theme='dark']) 
+{
+    --bg: #0f172a;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --text-main: #f1f5f9;
+    --text-sub: #94a3b8;
+    --button-bg: linear-gradient(to right, #4f46e5, #6366f1);
+    --button-bg-hover: linear-gradient(to right, #4338ca, #4f46e5);
+}
+
+.page 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.card 
+{
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.8s ease forwards;
+    opacity: 0;
+}
+
+.title 
+{
+    font-size: 2.75rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitle 
+{
+    font-size: 1.25rem;
+    color: var(--text-sub);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.button 
+{
+    padding: 0.85rem 2rem;
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+}
+
+.button:hover 
+{
+    background: var(--button-bg-hover);
+    transform: scale(1.05);
+}
+
+.themeToggle 
+{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.switch 
+{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input 
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider 
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.slider:before 
+{
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider 
+{
+    background-color: #4f46e5;
+}
+
+input:checked + .slider:before 
+{
+    transform: translateX(26px);
+}
+.themeToggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+.toggleBtn {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    width: 52px;
+    height: 28px;
+    padding: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.toggleBtn.dark {
+    justify-content: flex-end;
+}
+
+.iconWrapper {
+    background: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #4f46e5;
+}
+
+.sunIcon, .moonIcon {
+    width: 16px;
+    height: 16px;
+}
+
+.toggleBtn .moonIcon {
+    display: none;
+}
+
+.toggleBtn.dark .sunIcon {
+    display: none;
+}
+
+.toggleBtn.dark .moonIcon {
+    display: block;
+}
+
+@keyframes fadeIn 
+{
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
