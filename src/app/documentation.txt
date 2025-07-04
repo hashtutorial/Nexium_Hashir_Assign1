@@ -1,0 +1,51 @@
+Next.js is react framework
+react components for user interfaces and next for optimizations and features
+
+1.only page.tsx are routable for custom routes use logic
+2.to add css there are 2 options:
+make changes in global css page 
+or make css modeule in same folder and import using import styles from './foldername.filename.css';
+3.adding server components:
+all pages made are server components by default no need for "use server" directive
+server side functions/actions e.g preprocessing user input after form
+adv:
+zero bundle size, direct access to server, improved security, better seo
+disadv:
+cant interact with browser apis or handle user interations
+
+4.cient components:
+any component which has any event e.g form
+react hooks like useState, useEffect can only be used in client components
+rendered once on server side and then on the client side
+
+5. how to add links 
+import Link from 'next/link';
+ <Link href="/quotes" className={styles.button}> </link>
+typescript type aliases:
+//is a typescript type alias for a quote object (define shapes of objects, aliases) 
+// it has two properties: text and author, both of which are strings  
+//non instantiable type, used to define the structure of a quote object only exists at compile time
+//can only be composed with other types, using intersection (&) or union (|) types e.g type MaybeQuote = Quote | null;
+
+6. daily push:
+initial (one time) setup:
+cd "C:\Users\Oracle\Desktop\nexium_assign1"
+git init
+git remote add origin https://github.com/hashtutorial/Nexium_Hashir_Assign1.git
+
+daily steps(first time):
+git add .
+git commit -m "Initial commit: homepage & quote generator"
+git branch -M main
+git push -u origin main
+
+daily steps generic:
+cd "C:\Users\Oracle\Desktop\nexium_assign1"
+git add .
+git commit -m "Day x: work done etc"
+git push
+
+
+7.shadcn-ui themes and ui:
+to install : npx shadcn@latest init
+to make cards:npx shadcn@latest add card
