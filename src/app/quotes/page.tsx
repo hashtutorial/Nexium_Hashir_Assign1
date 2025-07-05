@@ -9,7 +9,9 @@ export default async function QuotesPage()
   return (
     <main className="p-6">
       <h1 className="text-3xl font-bold mb-4">Random Quote Generator</h1>
+      <div className="min-h-screen bg-base-200 text-base-content">
       <QuoteDisplay quotes={quotes} />
+      </div>
     </main>
   );
 }

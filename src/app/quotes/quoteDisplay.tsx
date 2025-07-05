@@ -3,19 +3,32 @@
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { motion, AnimatePresence } from 'framer-motion'; // for animation (optional)
+import { motion, AnimatePresence } from 'framer-motion';
 
 type Quote = {
   text: string;
   author: string;
 };
 
+const textColors = [
+  'text-primary',
+  'text-secondary',
+  'text-accent',
+  'text-info',
+  'text-success',
+  'text-warning',
+  'text-error',
+];
+
 export default function QuoteDisplay({ quotes }: { quotes: Quote[] }) {
   const [quote, setQuote] = useState<Quote | null>(null);
+  const [colorClass, setColorClass] = useState('text-primary');
 
   const handleClick = () => {
     const random = quotes[Math.floor(Math.random() * quotes.length)];
+    const color = textColors[Math.floor(Math.random() * textColors.length)];
     setQuote(random);
+    setColorClass(color);
   };
 
   return (
@@ -26,10 +39,25 @@ export default function QuoteDisplay({ quotes }: { quotes: Quote[] }) {
 
       <Button
         onClick={handleClick}
-        className="mb-8 transition-colors duration-300 hover:bg-primary/80 cursor-pointer"
+        className="mb-6 transition-colors duration-300 hover:bg-primary/80 cursor-pointer"
       >
         Generate Quote
       </Button>
+
+      <AnimatePresence mode="wait">
+        {quote && (
+          <motion.div
+            key={quote.text + 'alert'}
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.3 }}
+            className={`alert bg-base-100 shadow-md mb-4 w-full max-w-xl justify-center font-semibold ${colorClass}`}
+          >
+            <span>✨ New quote loaded!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence mode="wait">
         {quote && (
@@ -46,12 +74,19 @@ export default function QuoteDisplay({ quotes }: { quotes: Quote[] }) {
                 <p className="text-xl font-medium italic text-foreground leading-relaxed">
                   “{quote.text}”
                 </p>
-                <p className="text-sm text-muted-foreground">— {quote.author}</p>
+                <div className="flex items-center justify-center gap-2">
+                  <p className="text-sm text-muted-foreground">— {quote.author}</p>
+                  <div className="badge badge-outline badge-primary text-xs">{quote.author.length > 10 ? 'Legend' : 'Thinker'}</div>
+                </div>
               </CardContent>
             </Card>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <footer className="mt-12 text-center text-sm text-muted-foreground">
+         Visit daily for new quotes!
+      </footer>
     </div>
   );
 }

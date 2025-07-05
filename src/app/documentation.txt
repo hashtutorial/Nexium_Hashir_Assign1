@@ -49,3 +49,9 @@ git push
 7.shadcn-ui themes and ui:
 to install : npx shadcn@latest init
 to make cards:npx shadcn@latest add card
+similarly add more components as required
+
+8.Daisy ui and tailwind
+to install:  npm i -D daisyui@latest
+use the plugin in tailwind config filename
+visit daisyui website for more components
