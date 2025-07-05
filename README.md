@@ -8,6 +8,30 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 **Day 2:** Understood React server and client components (advantages, disadvantages, use cases) and built the `/quotes` page using both types.
 
+### 🗓️ Day 3: UI Library Integration with ShadCN
+
+- Integrated **ShadCN UI** into the Next.js project successfully.
+- Customized and themed components using Tailwind utilities.
+- Replaced the original homepage with a clean, modern layout using:
+  - `<Card>` and `<Button>` from ShadCN
+  - Responsive, minimal styling with Tailwind
+- Added **Framer Motion** to animate quote transitions smoothly.
+- The UI is now cleaner, more modular, and production-ready.
+
+---
+
+### 🗓️ Day 4: Enhancing UI with DaisyUI and Tailwind
+
+- Installed and configured **DaisyUI** with Tailwind CSS.
+- Combined **ShadCN + DaisyUI** to enhance visuals without conflict.
+- Added new features:
+  - 🎨 DaisyUI `alert` component for quote feedback
+  - 🏷️ Author `badge` based on name length
+  - 🌈 Randomized font color on each quote generation
+- Ensured all components are accessible and mobile responsive.
+- Refactored alert styling to remove icons and improve visibility.
+- Project now looks **polished, modern, and dynamic**.
+
 ## 🚀 Getting Started
 
 First, run the development server:
