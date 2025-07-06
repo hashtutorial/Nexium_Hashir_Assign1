@@ -33,8 +33,14 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - Project now looks **polished, modern, and dynamic**.
 
 ## 🚀 Getting Started
+Clone the repo and install dependencies:
 
-First, run the development server:
+```bash
+git clone https://github.com/hashtutorial/Nexium_Hashir_Assign1
+cd Nexium_Hashir_Assign1
+npm install
+
+Then, run the development server:
 
 ```bash
 npm run dev
