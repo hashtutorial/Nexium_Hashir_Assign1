@@ -11,13 +11,15 @@ type Quote = {
 };
 
 const textColors = [
-  'text-primary',
-  'text-secondary',
-  'text-accent',
-  'text-info',
-  'text-success',
-  'text-warning',
-  'text-error',
+ 'text-primary',
+  'text-red-500',
+  'text-blue-500',
+  'text-yellow-500',
+  'text-green-500',
+  'text-purple-500',
+  'text-pink-500',
+  'text-orange-500',
+  'text-emerald-500',
 ];
 
 export default function QuoteDisplay({ quotes }: { quotes: Quote[] }) {
