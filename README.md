@@ -32,6 +32,19 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - Refactored alert styling to remove icons and improve visibility.
 - Project now looks **polished, modern, and dynamic**.
 
+### 🗓️ Day 5: Final Vercel Deployment & Submission Prep
+Successfully deployed the Quote Generator to Vercel 🚀
+Live App: https://nexium-hashir-assign1.vercel.app
+
+Conducted final testing across:
+💻 Desktop and 📱 Mobile screens
+
+🌓 Light/Dark theme toggle
+
+💬 Quote generation animation and author tag logic
+
+Ensured production build success and zero console warnings
+
 ## 🚀 Getting Started
 Clone the repo and install dependencies:
 
